@@ -1,14 +1,23 @@
 {
   "canisters": {
-    "mah-bug-backend": {
+    "main": {
       "main": "src/mah-bug-backend/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "dependencies": [
+        "frontend"
+      ]
+    },
+    "frontend": {
+      "type": "assets",
+      "source": [
+        "frontend/"
+      ]
     }
   },
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
   },
   "output_env_file": ".env",
